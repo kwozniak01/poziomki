@@ -7,12 +7,7 @@ Zarządzanie bazą wolontariuszy podzielonych na kategorie: zieloną, żółtą,
 Zarządzanie bazą psów podzielonych na kategorie: łatwe, lękowe, behawioralne.
 Automatyczne przypisywanie psów do wolontariuszy na podstawie dostępności i kwalifikacji.
 Możliwość dodawania, usuwania oraz modyfikowania wolontariuszy i psów w bazie.
-Instalacja i uruchomienie
-Sklonuj repozytorium: git clone url_do_twojego_repo
-Przejdź do katalogu projektu: cd poziomkowy-spacerniak
-Zainstaluj zależności (jeśli jest to wymagane).
-Uruchom aplikację: (Tu wpisz odpowiednie instrukcje uruchomienia twojego projektu, np. komenda do uruchomienia Spring Boot)
-Współpraca
+
 Projekt jest otwarty na współpracę. Jeśli masz jakieś sugestie lub chcesz zgłosić błąd, utwórz nowy Issue lub Pull Request.
 
 Autor
