@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Psy według imienia</title>
+</head>
+<body>
+<h1>Psy według imienia</h1>
+<ul>
+  <li th:each="dog : ${dogs}">
+    <a th:href="@{'/dogs/' + ${dog.dogId}}"><span th:text="${dog.name}"></span></a>
+  </li>
+</ul>
+</body>
+</html>

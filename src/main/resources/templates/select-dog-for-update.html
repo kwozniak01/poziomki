@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Wybierz psa do aktualizacji</title>
+</head>
+<body>
+<h1>Wybierz psa do aktualizacji</h1>
+
+<form action="/dogs/update" method="get">
+  <label for="dogId">Wybierz psa:</label>
+  <select id="dogId" name="id">
+    <option th:each="dog : ${dogs}" th:value="${dog.id}" th:text="${dog.name}"></option>
+  </select>
+
+  <input type="submit" value="Aktualizuj psa">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Lista Spacerów</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h1>Lista Spacerów</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nazwa psa</th>
+      <th>Imię wolontariusza</th>
+      <th>Data spaceru</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="walk : ${walks}">
+      <td th:text="${walk.walkId}"></td>
+      <td th:text="${walk.dog.name}"></td>
+      <td th:text="${walk.volunteer.firstName} + ' ' + ${walk.volunteer.lastName}"></td>
+      <td th:text="${walk.walkDate}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

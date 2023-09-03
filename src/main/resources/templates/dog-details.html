@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Szczegóły psa</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Szczegóły psa</h1>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title" th:text="${dog.name}"></h5>
+      <p class="card-text"><strong>Wiek: </strong> <span th:text="${dog.age}"></span></p>
+      <p class="card-text"><strong>Kolor: </strong> <span th:text="${dog.colorCategory}"></span></p>
+      <p class="card-text"><strong>Opis: </strong> <span th:text="${dog.description}"></span></p>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<lang th:lang="pl">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Rejestracja Wolontariusza</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <h1>Rejestracja Wolontariusza</h1>
+  <form action="#" th:action="@{/register}" method="post">
+    <div class="form-group">
+      <label for="username">Nazwa użytkownika:</label>
+      <input type="text" class="form-control" id="username" th:field="*{username}" name="username" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Hasło:</label>
+      <input type="password" class="form-control" id="password" th:field="*{password}" name="password" required>
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">Imię:</label>
+      <input type="text" class="form-control" id="firstName" th:field="*{firstName}" name="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Nazwisko:</label>
+      <input type="text" class="form-control" id="lastName" th:field="*{lastName}" name="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Numer telefonu:</label>
+      <input type="tel" class="form-control" id="phoneNumber" th:field="*{phoneNumber}" name="phoneNumber">
+    </div>
+
+    <div class="form-group">
+      <label for="colorCategory">Kategoria kolorów:</label>
+      <select class="form-control" id="colorCategory" th:field="*{colorCategory}" name="colorCategory">
+        <option value="czerwony">Czerwony</option>
+        <option value="żółty">Żółty</option>
+        <option value="zielony">Zielony</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zarejestruj</button>
+  </form>
+</div>
+
+<!-- Bootstrap JS (optional) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

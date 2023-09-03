@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista wolontariuszy</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h1>Lista wolontariuszy</h1>
+  <a href="/" class="btn btn-primary">Strona główna</a>  <!-- Guzik do strony głównej -->
+  <a href="/volunteers/add" class="btn btn-success">Dodaj nowego wolontariusza</a>  <!-- Guzik dodający nowego wolontariusza -->
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Imię</th>
+      <th scope="col">Nazwisko</th>
+      <th scope="col">Operacje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="volunteer : ${volunteers}">
+      <td><a th:href="@{'/volunteers/' + ${volunteer.volunteerId}}"><span th:text="${volunteer.firstName}"></span></a></td>
+      <td><span th:text="${volunteer.lastName}"></span></td>
+      <td>
+        <form th:action="@{'/volunteers/' + ${volunteer.volunteerId}}" method="post" class="d-inline">
+          <input type="hidden" name="_method" value="delete"/>
+          <button type="submit" class="btn btn-danger">Usuń</button>
+        </form>
+        <!-- Guzik do aktualizacji wolontariusza -->
+        <a th:href="@{'/volunteers/update/' + ${volunteer.volunteerId}}" class="btn btn-primary ml-2">Aktualizuj</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

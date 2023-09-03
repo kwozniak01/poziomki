@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Dodawanie psa</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .navbar {
+      background-color: #6c757d !important;
+    }
+    .container {
+      margin-top: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Dodaj nowego psa</h1>
+  <form action="/dogs" method="post">
+    <div class="form-group">
+      <label for="name">Imię:</label>
+      <input type="text" id="name" name="name" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="age">Wiek:</label>
+      <input type="number" id="age" name="age" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="colorCategory">Kolor:</label>
+      <select id="colorCategory" name="colorCategory" class="form-control">
+        <option value="czerwony">czerwony</option>
+        <option value="zielony">zielony</option>
+        <option value="żółty">żółty</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Opis:</label>
+      <textarea id="description" name="description" rows="4" class="form-control"></textarea>
+    </div>
+
+    <input type="submit" value="Dodaj psa" class="btn btn-primary">
+  </form>
+</div>
+
+</body>
+</html>

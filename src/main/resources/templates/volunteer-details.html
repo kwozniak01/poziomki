@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Szczegóły wolontariusza</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Szczegóły wolontariusza</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${volunteer.firstName} + ' ' + ${volunteer.lastName}"></h5>
+            <p class="card-text"><strong>Kategoria koloru: </strong> <span th:text="${volunteer.colorCategory}"></span></p>
+            <p class="card-text"><strong>Telefon: </strong> <span th:text="${volunteer.phoneNumber}"></span></p>
+            <button type="button" class="btn btn-primary">Aktualizuj</button>
+            <button type="button" class="btn btn-danger">Usuń</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

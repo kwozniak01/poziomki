@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Dodawanie wolontariusza</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .navbar {
+      background-color: #6c757d !important;
+    }
+    .container {
+      margin-top: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Dodaj nowego wolontariusza</h1>
+  <form action="/volunteers" method="post">
+    <div class="form-group">
+      <label for="username">Nazwa użytkownika:</label>
+      <input type="text" id="username" name="username" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="firstName">Imię:</label>
+      <input type="text" id="firstName" name="firstName" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Nazwisko:</label>
+      <input type="text" id="lastName" name="lastName" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Telefon:</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="colorCategory">Kolor:</label>
+      <select id="colorCategory" name="colorCategory" class="form-control">
+        <option value="zielony">Zielony</option>
+        <option value="żółty">Żółty</option>
+        <option value="czerwony">Czerwony</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Hasło:</label>
+      <input type="password" id="password" name="password" class="form-control">
+    </div>
+
+    <input type="submit" value="Dodaj wolontariusza" class="btn btn-primary">
+  </form>
+</div>
+
+</body>
+</html>
