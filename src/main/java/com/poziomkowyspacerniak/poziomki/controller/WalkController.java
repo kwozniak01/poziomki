@@ -36,7 +36,7 @@ public class WalkController {
 
     @GetMapping
     public String getAllWalks(Model model) {
-        List<Walk> walks = walkService.getAllWalks();
+        List<Walk> walks = walkService.getAllWalksSortedByWalkDate();
         model.addAttribute("walks", walks);
         return "walk-list";
     }

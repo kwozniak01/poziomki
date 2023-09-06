@@ -13,6 +13,7 @@ import java.util.List;
 @Repository
 public interface WalkRepository extends JpaRepository<Walk, Long> {
     List<Walk> findAllByWalkDateBetween(LocalDateTime start, LocalDateTime end);
+    List<Walk> findAllByOrderByWalkDateAsc();
 
     @Query("SELECT w FROM Walk w JOIN w.dog d JOIN w.volunteer v WHERE d.name= :dogName")
     List<Walk> findWalksByDogName(@Param("dogName") String dogName);

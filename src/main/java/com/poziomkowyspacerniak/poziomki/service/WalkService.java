@@ -16,6 +16,10 @@ public class WalkService {
 
     public List<Walk> getAllWalks() {
         return walkRepository.findAll();
+
+    }
+    public List<Walk> getAllWalksSortedByWalkDate() {
+        return walkRepository.findAllByOrderByWalkDateAsc();
     }
 
 
