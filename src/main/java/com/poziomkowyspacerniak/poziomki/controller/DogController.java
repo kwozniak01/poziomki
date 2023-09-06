@@ -59,7 +59,7 @@ public class DogController {
     }
     @GetMapping("/update")
     public String selectDogForUpdate(Model model) {
-        List<Dog> dogs = dogService.getAll();
+        List<Dog> dogs = dogService.getAllDogs();
         model.addAttribute("dogs", dogs);
         return "select-dog-for-update";
     }
@@ -69,6 +69,15 @@ public class DogController {
         dogService.addDog(dog);
         return "redirect:/dogs";
     }
+    @GetMapping("/update/{id}")
+    public String showUpdateForm(@PathVariable Long id, Model model) {
+        Dog dog = dogService.getDogById(id);
+        if (dog != null) {
+            model.addAttribute("dog", dog);
+            return "update-dog";
+        }
+        return "dog-not-found";
+    }
 
     @PutMapping("/{id}")
     public String updateDog(@PathVariable Long id, @ModelAttribute Dog dog) {
@@ -76,7 +85,7 @@ public class DogController {
         if (existingDog != null) {
             dog.setDogId(id);
             dogService.updateDog(dog);
-            return "redirect:/dogs/" + id;
+            return "redirect:/dogs/";
         }
         return "dog-not-found";
     }

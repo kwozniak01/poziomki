@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional  // Wszystkie metody w klasie będą wykonywane w ramach jednej transakcji
+//@Transactional  // Wszystkie metody w klasie będą wykonywane w ramach jednej transakcji
 public class VolunteerService {
 
     @Autowired
@@ -61,5 +61,9 @@ public class VolunteerService {
 
     public void deleteVolunteer(Long id) {
         volunteerRepository.deleteById(id);
+    }
+
+    public List<Volunteer> getAllSortedByLastName() {
+        return volunteerRepository.findAllByOrderByLastNameAsc();
     }
 }

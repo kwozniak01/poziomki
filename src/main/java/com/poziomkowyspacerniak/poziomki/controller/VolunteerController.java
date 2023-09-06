@@ -18,7 +18,7 @@ public class VolunteerController {
 
     @GetMapping
     public String getAllVolunteers(Model model) {
-        List<Volunteer> volunteers = volunteerService.getAllVolunteers();
+        List<Volunteer> volunteers = volunteerService.getAllSortedByLastName();
         model.addAttribute("volunteers", volunteers);
         return "volunteer-list";
     }
@@ -57,6 +57,15 @@ public class VolunteerController {
         volunteerService.addVolunteer(volunteer);
         return "redirect:/volunteers";
     }
+    @GetMapping("/update/{id}")
+    public String showUpdateForm(@PathVariable Long id, Model model) {
+        Volunteer volunteer = volunteerService.getVolunteerById(id);
+        if (volunteer != null) {
+            model.addAttribute("volunteer", volunteer);
+            return "update-volunteer";
+        }
+        return "volunteer-not-found";
+    }
 
     @PutMapping("/{id}")
     public String updateVolunteer(@PathVariable Long id, @ModelAttribute Volunteer volunteer) {
@@ -64,7 +73,7 @@ public class VolunteerController {
         if (existingVolunteer != null) {
             volunteer.setVolunteerId(id);
             volunteerService.updateVolunteer(volunteer);
-            return "redirect:/volunteers/" + id;
+            return "redirect:/volunteers/";
         }
         return "volunteer-not-found";
     }

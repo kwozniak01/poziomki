@@ -12,7 +12,7 @@ public class DogService {
     @Autowired
     private DogRepository dogRepository;
 
-    public List<Dog> getAll() {
+    public List<Dog> getAllDogs() {
         return dogRepository.findAll();
     }
     public List<Dog> getAllSortedByName() {

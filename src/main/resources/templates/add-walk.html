@@ -1,16 +1,46 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Dodaj Spacer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Dodaj spacer</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
 <div class="container">
-  <h1>Dodaj Spacer</h1>
-  <form th:action="@{/walks}" method="post">
-    <!-- Tu będzie formularz  -->
-    <button type="submit" class="btn btn-primary">Dodaj</button>
-  </form>
+    <h1 class="mt-4 mb-4">Dodaj spacer</h1>
+
+    <form action="#" method="post" th:action="@{/walks}">
+        <div class="form-group">
+            <label for="volunteer">Wybierz wolonariusza:</label>
+            <select class="form-control" id="volunteer" name="volunteerId">
+              <option th:each="volunteer : ${allVolunteers}" th:value="${volunteer.volunteerId}" th:text="${volunteer.firstName + ' ' + volunteer.lastName}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="dog">Wybierz psa:</label>
+            <select class="form-control" id="dog" name="dogId">
+              <option th:each="dog : ${allDogs}" th:value="${dog.dogId}" th:text="${dog.name}"></option>
+            </select>
+        </div>
+
+        <!-- Data spaceru -->
+        <div class="form-group">
+            <label for="walkDate">Data spaceru:</label>
+            <input class="form-control" id="walkDate" name="stringWalkDate" required type="date">
+        </div>
+        <!-- Czas spaceru -->
+        <div class="form-group">
+            <label for="walkTime">Czas spaceru:</label>
+            <input class="form-control" id="walkTime" name="stringWalkTime" required type="time">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Zapisz spacer</button>
+        </div>
+    </form>
 </div>
+
 </body>
 </html>

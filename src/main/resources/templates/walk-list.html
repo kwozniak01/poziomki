@@ -7,13 +7,16 @@
 <body>
 <div class="container">
   <h1>Lista Spacerów</h1>
+  <a href="/" class="btn btn-primary mb-3">Strona główna</a>  <!-- Guzik do strony głównej -->
+  <a href="/walks/add" class="btn btn-success mb-3">Dodaj nowy spacer</a>  <!-- Guzik  nowy spacer -->
   <table class="table">
     <thead>
     <tr>
       <th>ID</th>
-      <th>Nazwa psa</th>
-      <th>Imię wolontariusza</th>
+      <th>Pies</th>
+      <th>Wolontariusz</th>
       <th>Data spaceru</th>
+      <th>Operacje</th>
     </tr>
     </thead>
     <tbody>
@@ -22,6 +25,15 @@
       <td th:text="${walk.dog.name}"></td>
       <td th:text="${walk.volunteer.firstName} + ' ' + ${walk.volunteer.lastName}"></td>
       <td th:text="${walk.walkDate}"></td>
+      <td>
+        <!-- Guzik do usuwania spaceru -->
+        <form th:action="@{'/walks/delete/' + ${walk.walkId}}" method="post" class="d-inline">
+          <input type="hidden" name="_method" value="delete"/>
+          <button type="submit" class="btn btn-danger">Usuń</button>
+        </form>
+<!--        &lt;!&ndash; Guzik do aktualizacji spaceru &ndash;&gt;-->
+<!--        <a th:href="@{'/walks/update/' + ${walk.walkId}}" class="btn btn-primary ml-2">Aktualizuj</a>-->
+      </td>
     </tr>
     </tbody>
   </table>
